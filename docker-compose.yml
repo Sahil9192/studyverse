@@ -1,0 +1,17 @@
+
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: studyverse_db
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=studyverse
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
